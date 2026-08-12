@@ -6,6 +6,15 @@
 	<title>Lightbox</title>
 </head>
 <body>
+<script>
+window.ngxReadyMicro = function() {
+  console.log("calling ngxReadyMicro");
+  NGX.api('register:context:provider', (campaignId) => {
+	console.log('Providing context for', campaignId);
+	return { onload: {"nc.ol_user_id": "bdead5fc-9b9e-4da8-9564-4b99662d51b3", "nc.ol_zync_id": "11bb5e79-a86b-442e-a0ce-0832e8ceaf4f:1679932787.4622805"}}
+  });
+}
+</script>	
 <script src="https://d3-displayx.ngx.dev/lightbox/2ddac5a1-c6cf-440d-9c6e-68a4efd1635d?mode=adaptive"></script>
 </body>
 </html>
